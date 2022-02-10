@@ -50,3 +50,12 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - run: npm run generate
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
