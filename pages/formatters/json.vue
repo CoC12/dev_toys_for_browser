@@ -4,9 +4,7 @@
     <div class="mt-4">
       <v-container>
         <v-row>
-          <v-col
-            class="col-12 col-md-4"
-          >
+          <v-col class="col-12 col-md-4">
             <v-select
               v-model="indent"
               :items="indentOptions"
@@ -18,26 +16,13 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col
-            class="col-12 col-md-6"
-          >
+          <v-col class="col-12 col-md-6">
             Input
-            <v-textarea
-              v-model="input"
-              filled
-              auto-grow
-            ></v-textarea>
+            <v-textarea v-model="input" filled auto-grow></v-textarea>
           </v-col>
-          <v-col
-            class="col-12 col-md-6"
-          >
+          <v-col class="col-12 col-md-6">
             Output
-            <v-textarea
-              v-model="output"
-              filled
-              auto-grow
-              readonly
-            ></v-textarea>
+            <v-textarea v-model="output" filled auto-grow readonly></v-textarea>
           </v-col>
         </v-row>
       </v-container>
@@ -55,28 +40,28 @@ export default {
       indent: 4,
       indentOptions: [
         {
-          'label': '0 spaces (minified)',
-          'value': 0,
+          label: '0 spaces (minified)',
+          value: 0,
         },
         {
-          'label': '1 spaces',
-          'value': 1,
+          label: '1 spaces',
+          value: 1,
         },
         {
-          'label': '2 spaces',
-          'value': 2,
+          label: '2 spaces',
+          value: 2,
         },
         {
-          'label': '3 spaces',
-          'value': 3,
+          label: '3 spaces',
+          value: 3,
         },
         {
-          'label': '4 spaces (default)',
-          'value': 4,
+          label: '4 spaces (default)',
+          value: 4,
         },
         {
-          'label': '1 tab',
-          'value': '\t',
+          label: '1 tab',
+          value: '\t',
         },
       ],
     }

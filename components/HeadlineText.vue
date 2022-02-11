@@ -8,7 +8,7 @@
 export default {
   name: 'HeadlineText',
   props: {
-    'headlineText': {
+    headlineText: {
       type: String,
       default: '',
     },

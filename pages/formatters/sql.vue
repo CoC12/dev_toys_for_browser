@@ -4,26 +4,13 @@
     <div class="mt-4">
       <v-container>
         <v-row>
-          <v-col
-            class="col-12 col-md-6"
-          >
+          <v-col class="col-12 col-md-6">
             Input
-            <v-textarea
-              v-model="input"
-              filled
-              auto-grow
-            ></v-textarea>
+            <v-textarea v-model="input" filled auto-grow></v-textarea>
           </v-col>
-          <v-col
-            class="col-12 col-md-6"
-          >
+          <v-col class="col-12 col-md-6">
             Output
-            <v-textarea
-              v-model="output"
-              filled
-              auto-grow
-              readonly
-            ></v-textarea>
+            <v-textarea v-model="output" filled auto-grow readonly></v-textarea>
           </v-col>
         </v-row>
       </v-container>
@@ -32,7 +19,7 @@
 </template>
 
 <script>
-import { format } from 'sql-formatter';
+import { format } from 'sql-formatter'
 
 export default {
   name: 'SqlFormatter',

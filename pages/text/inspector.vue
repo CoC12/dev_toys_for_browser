@@ -4,34 +4,15 @@
     <div class="mt-4">
       <v-container>
         <v-row>
-          <v-col
-            class="col-12 col-md-8"
-          >
-            <v-textarea
-              v-model="text"
-              filled
-              auto-grow
-            ></v-textarea>
+          <v-col class="col-12 col-md-8">
+            <v-textarea v-model="text" filled auto-grow></v-textarea>
           </v-col>
-          <v-col
-            class="col-12 col-md-4"
-          >
-            <v-card
-              outlined
-              class="pa-3"
-            >
-              <div>
-                Characters: {{ characters }}
-              </div>
-              <div>
-                Words: {{ words }}
-              </div>
-              <div>
-                Lines: {{ lines }}
-              </div>
-              <div>
-                Bytes: {{ bytes }}
-              </div>
+          <v-col class="col-12 col-md-4">
+            <v-card outlined class="pa-3">
+              <div>Characters: {{ characters }}</div>
+              <div>Words: {{ words }}</div>
+              <div>Lines: {{ lines }}</div>
+              <div>Bytes: {{ bytes }}</div>
               <v-divider class="my-3"></v-divider>
               <div>
                 Word distribution:
@@ -95,33 +76,29 @@ export default {
       if (this.text.trim() === '') {
         return
       }
-      return this.getFrequency(
-        this.text.trim().matchAll(/\w+/g)
-      ).map(
-        count => `${count[0]}: ${count[1]}`
-      ).join('\n')
+      return this.getFrequency(this.text.trim().matchAll(/\w+/g))
+        .map((count) => `${count[0]}: ${count[1]}`)
+        .join('\n')
     },
     characterDistribution() {
       if (this.text.trim() === '') {
         return
       }
-      return this.getFrequency(
-        this.text.trim().matchAll(/./g)
-      ).map(
-        count => `${count[0]}: ${count[1]}`
-      ).join('\n')
+      return this.getFrequency(this.text.trim().matchAll(/./g))
+        .map((count) => `${count[0]}: ${count[1]}`)
+        .join('\n')
     },
   },
   methods: {
     getFrequency(list) {
       const frequency = {}
       for (const item of list) {
-        frequency[item] = frequency[item] ? frequency[item] += 1 : 1
+        frequency[item] = frequency[item] ? (frequency[item] += 1) : 1
       }
       return Object.entries(frequency).sort((x, y) => {
         return x[1] < y[1] ? 1 : -1
       })
-    }
+    },
   },
 }
 </script>

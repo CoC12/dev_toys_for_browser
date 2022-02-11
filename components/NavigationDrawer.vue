@@ -1,14 +1,11 @@
 <template>
   <div>
-    <v-app-bar
-      clipped-left
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon class="d-block d-lg-none" @click.stop="isOpen = !isOpen" />
-      <v-icon>
-        mdi-xml
-      </v-icon>
+    <v-app-bar clipped-left fixed app>
+      <v-app-bar-nav-icon
+        class="d-block d-lg-none"
+        @click.stop="isOpen = !isOpen"
+      />
+      <v-icon> mdi-xml </v-icon>
       <v-toolbar-title class="ml-4" v-text="title" />
     </v-app-bar>
     <v-navigation-drawer
@@ -52,11 +49,14 @@ export default {
     }
   },
   computed: {
-    isExpandOnHover () {
+    isExpandOnHover() {
       switch (this.$vuetify.breakpoint.name) {
-        case 'lg': return true
-        case 'xl': return true
-        default: return false
+        case 'lg':
+          return true
+        case 'xl':
+          return true
+        default:
+          return false
       }
     },
   },
