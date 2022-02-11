@@ -1,0 +1,50 @@
+{
+  "all_tools": {
+    "to": "/",
+    "icon": "mdi-apps",
+    "title": "All tools",
+    "tools": []
+  },
+  "formatters": {
+    "to": "/formatters",
+    "icon": "mdi-format-align-middle",
+    "title": "Formatters",
+    "tools": [
+      {
+        "key": "json",
+        "to": "/formatters/json",
+        "icon": "mdi-code-braces",
+        "title": "JSON Formatter",
+        "text": "Indent or minify JSON data"
+      },
+      {
+        "key": "sql",
+        "to": "/formatters/sql",
+        "icon": "mdi-database",
+        "title": "SQL Formatter",
+        "text": "Indent SQL queries"
+      }
+    ]
+  },
+  "text": {
+    "to": "/text",
+    "icon": "mdi-format-size",
+    "title": "Text",
+    "tools": [
+      {
+        "key": "inspector",
+        "to": "/text/inspector",
+        "icon": "mdi-format-color-text",
+        "title": "Text Inspector",
+        "text": "Analyze text"
+      },
+      {
+        "key": "mark_down",
+        "to": "/text/mark_down_preview",
+        "icon": "mdi-file-document",
+        "title": "Markdown Preview",
+        "text": "Preview a Markdown document"
+      }
+    ]
+  }
+}

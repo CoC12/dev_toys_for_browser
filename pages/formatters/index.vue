@@ -11,11 +11,11 @@
 import tools from '@/assets/tools.json'
 
 export default {
-  name: 'AllToolsPage',
+  name: 'FormattersPage',
   data() {
     return {
-      headlineText: 'All tools',
-      items: [].concat(...Object.values(tools).map((tool) => tool.tools)),
+      headlineText: 'Formatters',
+      items: tools.formatters.tools,
     }
   },
 }
