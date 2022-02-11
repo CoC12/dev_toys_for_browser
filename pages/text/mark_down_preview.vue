@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeadlineText :headlineText="headlineText" />
+    <HeadlineText :headline-text="headlineText" />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -18,12 +18,14 @@
             class="col-12 col-md-6"
           >
             Preview
+            <!-- eslint-disable vue/no-v-html -->
             <v-card
-              v-html="compiledMarkdown"
               outlined
               height='100%'
               class="pa-4"
+              v-html="compiledMarkdown"
             ></v-card>
+            <!-- eslint-enable vue/no-v-html -->
           </v-col>
         </v-row>
       </v-container>
@@ -32,6 +34,8 @@
 </template>
 
 <script>
+import { marked } from 'marked';
+
 export default {
   name: 'MarkdownPreview',
   data() {
@@ -40,16 +44,12 @@ export default {
       input:'',
     }
   },
-  mounted() {
-    const markedScript = document.createElement('script')
-    markedScript.setAttribute('src', 'https://cdn.jsdelivr.net/npm/marked/marked.min.js')
-  },
   computed: {
     compiledMarkdown() {
       if (this.input === '') {
         return ''
       }
-      return marked.marked(this.input)
+      return marked(this.input)
     }
   },
 }

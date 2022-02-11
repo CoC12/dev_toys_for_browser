@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeadlineText :headlineText="headlineText" />
+    <HeadlineText :headline-text="headlineText" />
     <div class="mt-4">
       <CardList :items="items" />
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeadlineText :headlineText="headlineText" />
+    <HeadlineText :headline-text="headlineText" />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -81,6 +81,11 @@ export default {
       ],
     }
   },
+  computed: {
+    output() {
+      return this.formatJson(this.input)
+    },
+  },
   methods: {
     formatJson(text) {
       if (text === '') {
@@ -91,11 +96,6 @@ export default {
       } catch (e) {
         return 'Parse error'
       }
-    },
-  },
-  computed: {
-    output() {
-      return this.formatJson(this.input)
     },
   },
 }

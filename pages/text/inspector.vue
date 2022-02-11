@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeadlineText :headlineText="headlineText" />
+    <HeadlineText :headline-text="headlineText" />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -21,16 +21,16 @@
               class="pa-3"
             >
               <div>
-                Characters: <span v-html="characters"></span>
+                Characters: {{ characters }}
               </div>
               <div>
-                Words: <span v-html="words"></span>
+                Words: {{ words }}
               </div>
               <div>
-                Lines: <span v-html="lines"></span>
+                Lines: {{ lines }}
               </div>
               <div>
-                Bytes: <span v-html="bytes"></span>
+                Bytes: {{ bytes }}
               </div>
               <v-divider class="my-3"></v-divider>
               <div>
@@ -75,17 +75,6 @@ export default {
       text: '',
     }
   },
-  methods: {
-    getFrequency(list) {
-      const frequency = {}
-      for (const item of list) {
-        frequency[item] = frequency[item] ? frequency[item] += 1 : 1
-      }
-      return Object.entries(frequency).sort((x, y) => {
-        return x[1] < y[1] ? 1 : -1
-      })
-    }
-  },
   computed: {
     characters() {
       return this.text.length
@@ -122,6 +111,17 @@ export default {
         count => `${count[0]}: ${count[1]}`
       ).join('\n')
     },
+  },
+  methods: {
+    getFrequency(list) {
+      const frequency = {}
+      for (const item of list) {
+        frequency[item] = frequency[item] ? frequency[item] += 1 : 1
+      }
+      return Object.entries(frequency).sort((x, y) => {
+        return x[1] < y[1] ? 1 : -1
+      })
+    }
   },
 }
 </script>

@@ -5,15 +5,15 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="isOpen = !isOpen" class="d-block d-lg-none" />
+      <v-app-bar-nav-icon class="d-block d-lg-none" @click.stop="isOpen = !isOpen" />
       <v-icon>
         mdi-xml
       </v-icon>
-      <v-toolbar-title v-text="title" class="ml-4" />
+      <v-toolbar-title class="ml-4" v-text="title" />
     </v-app-bar>
     <v-navigation-drawer
       v-model="isOpen"
-      :expandOnHover="isExpandOnHover"
+      :expand-on-hover="isExpandOnHover"
       clipped
       app
     >
@@ -44,6 +44,13 @@ import items from '@/assets/tools.json'
 
 export default {
   name: 'NavigationDrawer',
+  data() {
+    return {
+      title: 'Dev Toys for Browser',
+      isOpen: true,
+      items,
+    }
+  },
   computed: {
     isExpandOnHover () {
       switch (this.$vuetify.breakpoint.name) {
@@ -52,13 +59,6 @@ export default {
         default: return false
       }
     },
-  },
-  data() {
-    return {
-      title: 'Dev Toys for Browser',
-      isOpen: true,
-      items: items,
-    }
   },
 }
 </script>
