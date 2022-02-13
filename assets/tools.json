@@ -5,6 +5,34 @@
     "title": "All tools",
     "tools": []
   },
+  "encoders": {
+    "to": "/encoders",
+    "icon": "mdi-numeric-10",
+    "title": "Encoders / Decoders",
+    "tools": [
+      {
+        "key": "html",
+        "to": "/encoders/html",
+        "icon": "mdi-language-html5",
+        "title": "Html Encoders / Decoders",
+        "text": "Encode or decode all the applicable characters to their corresponding HTML entities"
+      },
+      {
+        "key": "url",
+        "to": "/encoders/url",
+        "icon": "mdi-link",
+        "title": "URL Encoders / Decoders",
+        "text": "Encode or decode all the applicable characters to their corresponding URL entities"
+      },
+      {
+        "key": "base64",
+        "to": "/encoders/base64",
+        "icon": "mdi-alpha-b-box",
+        "title": "Base 64 Encoders / Decoders",
+        "text": "Encode or decode Base64 data"
+      }
+    ]
+  },
   "formatters": {
     "to": "/formatters",
     "icon": "mdi-format-align-middle",
@@ -34,14 +62,14 @@
       {
         "key": "inspector",
         "to": "/text/inspector",
-        "icon": "mdi-format-color-text",
+        "icon": "mdi-format-text",
         "title": "Text Inspector",
         "text": "Analyze text"
       },
       {
         "key": "mark_down",
         "to": "/text/mark_down_preview",
-        "icon": "mdi-file-document",
+        "icon": "mdi-language-markdown",
         "title": "Markdown Preview",
         "text": "Preview a Markdown document"
       }

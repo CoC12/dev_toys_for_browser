@@ -46,3 +46,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+pre {
+  background: #2e2e2e;
+
+  code {
+    background: none !important;
+  }
+}
+</style>
