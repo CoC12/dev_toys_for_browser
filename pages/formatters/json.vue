@@ -10,7 +10,6 @@
               :items="indentOptions"
               item-text="label"
               item-value="value"
-              label="Indent"
               solo
             ></v-select>
           </v-col>
@@ -22,7 +21,22 @@
           </v-col>
           <v-col class="col-12 col-md-6">
             Output
-            <v-textarea v-model="output" filled auto-grow readonly></v-textarea>
+            <v-textarea
+              v-show="error === ''"
+              v-model="output"
+              filled
+              auto-grow
+              readonly
+            ></v-textarea>
+            <!-- eslint-disable vue/no-v-html -->
+            <v-card
+              v-show="error !== ''"
+              outlined
+              height="100%"
+              class="pa-4"
+              v-html="error"
+            ></v-card>
+            <!-- eslint-enable vue/no-v-html -->
           </v-col>
         </v-row>
       </v-container>
@@ -36,6 +50,7 @@ export default {
   data() {
     return {
       headlineText: 'JSON Formatter',
+      error: '',
       input: '',
       indent: 4,
       indentOptions: [
@@ -73,13 +88,26 @@ export default {
   },
   methods: {
     formatJson(text) {
+      this.error = ''
       if (text === '') {
         return ''
       }
       try {
         return JSON.stringify(JSON.parse(text), null, this.indent)
       } catch (e) {
-        return 'Parse error'
+        const position = e.message.match(/position (\d+)/)
+        if (position === null) {
+          this.error = 'Expecting closing } at end'
+          return ''
+        }
+        const errorPosition = Number.parseInt(position[1])
+        this.error =
+          text.substr(0, errorPosition) +
+          '<span style="color:red;font-weight:bold;">' +
+          text.substr(errorPosition, 1) +
+          '</span>' +
+          text.substr(errorPosition + 1, text.length)
+        return ''
       }
     },
   },
