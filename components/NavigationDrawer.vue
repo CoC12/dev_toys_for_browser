@@ -7,6 +7,7 @@
       />
       <v-icon> mdi-xml </v-icon>
       <v-toolbar-title class="ml-4" v-text="title" />
+      <FavoriteTools class="ml-8" />
     </v-app-bar>
     <v-navigation-drawer
       v-model="isOpen"

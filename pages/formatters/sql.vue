@@ -1,6 +1,10 @@
 <template>
   <div>
-    <HeadlineText :headline-text="headlineText" />
+    <HeadlineText
+      :headline-text="headlineText"
+      enable-favorite
+      :tool-key="toolKey"
+    />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -47,6 +51,7 @@ export default {
   data() {
     return {
       headlineText: 'SQL Formatter',
+      toolKey: 'sql',
       input: '',
       indent: 4,
       toUpperCase: false,

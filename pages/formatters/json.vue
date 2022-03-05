@@ -1,6 +1,10 @@
 <template>
   <div>
-    <HeadlineText :headline-text="headlineText" />
+    <HeadlineText
+      :headline-text="headlineText"
+      enable-favorite
+      :tool-key="toolKey"
+    />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -50,6 +54,7 @@ export default {
   data() {
     return {
       headlineText: 'JSON Formatter',
+      toolKey: 'json',
       error: '',
       input: '',
       indent: 4,

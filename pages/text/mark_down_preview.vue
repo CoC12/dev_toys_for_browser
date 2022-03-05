@@ -1,6 +1,10 @@
 <template>
   <div>
-    <HeadlineText :headline-text="headlineText" />
+    <HeadlineText
+      :headline-text="headlineText"
+      enable-favorite
+      :tool-key="toolKey"
+    />
     <div class="mt-4">
       <v-container>
         <v-row>
@@ -33,6 +37,7 @@ export default {
   data() {
     return {
       headlineText: 'Markdown Preview',
+      toolKey: 'mark_down',
       input: '',
     }
   },
