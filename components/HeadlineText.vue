@@ -4,7 +4,7 @@
       {{ headlineText }}
     </h2>
     <v-spacer></v-spacer>
-    <div v-if="enableFavorite" class="d-flex align-end mr-10">
+    <div v-if="enableFavorite" class="d-none d-sm-flex align-end mr-10">
       <v-btn v-show="!includedFavorites" @click="addToFavorites">
         <v-icon class="mr-2">mdi-star</v-icon>
         Add to Favorites
