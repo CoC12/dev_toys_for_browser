@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.19.3",
+    "lorem-ipsum": "^2.0.4",
     "marked": "^4.0.12",
     "mitt": "^3.0.0",
     "nuxt": "^2.15.8",

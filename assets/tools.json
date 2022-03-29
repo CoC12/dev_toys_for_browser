@@ -72,6 +72,13 @@
         "icon": "mdi-language-markdown",
         "title": "Markdown Preview",
         "text": "Preview a Markdown document"
+      },
+      {
+        "key": "dummy_text_generator",
+        "to": "/text/dummy_text_generator",
+        "icon": "mdi-alphabetical-variant",
+        "title": "Dummy Text Generator",
+        "text": "Create dummy text"
       }
     ]
   }
